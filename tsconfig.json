@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es2018",
+    "module": "commonjs",
+    "lib": ["es2018", "esnext"],
+    "outDir": "dist",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "types": ["node", "jest"],
+  }
+}
