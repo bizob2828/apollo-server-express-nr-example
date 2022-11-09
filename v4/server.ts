@@ -1,6 +1,6 @@
 // Source: https://www.apollographql.com/docs/apollo-server/api/express-middleware
 // yarn add @apollo/server express graphql cors body-parser
-import {ApolloServer, BaseContext} from '@apollo/server';
+import {ApolloServer, BaseContext, ApolloServerPlugin } from '@apollo/server';
 import { expressMiddleware } from '@apollo/server/express4';
 import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHttpServer';
 import express from 'express';
@@ -19,7 +19,7 @@ const app = express();
 
 const httpServer = http.createServer(app);
 
-const newRelicPlugin = createNewRelicPlugin();
+const newRelicPlugin = createNewRelicPlugin<ApolloServerPlugin>();
 
 const start = async (): Promise<void> => {
   const server = new ApolloServer<MyContext>({
